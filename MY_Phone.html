@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="MY_Phone.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="phone">
+        <header>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </header>
+        <section>
+            <!-- 畫面頂部 -->
+            <div class="up" id="up">
+                <i class='bx bx-signal-5' style="font-size: 25px; margin-left: 5px; user-select:none" id="up_i1"></i>
+                <i class='bx bxs-plane bx-rotate-90' style='color:#000000; font-size: 25px; display: none; margin-left: 5px;' id="up_i2"></i>
+                <b style="margin-right: 156px; user-select:none" id="up_b">育展大哥大</b>
+                <b id="hr" style="user-select:none">00</b>
+                <b style="user-select:none">:</b>
+                <b id="min" style="user-select:none">00</b>
+                <i class='bx bxs-battery-charging' style="font-size: 30px; margin-left: 230px; color: rgb(14, 190, 23); user-select:none"></i>
+
+            </div>
+            <!-- 畫面中間 -->
+            <div class="middle" id="middle">
+                <!-- 計算機 -->
+                <div class="black" id="b1"> 
+                    <div class="b1_1">
+                        <b id="ans">0</b>
+                    </div>
+                    <div class="b1_2">
+                        <button class="b1_2_small_circle" style="background-color: rgb(190, 190, 190);" id="AC"><b>AC</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(190, 190, 190);" id="_abs"><b>+/-</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(190, 190, 190);"id='_remainder'><b>%</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(250, 133, 0);"id='_division'><b>/</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_7"><b>7</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_8"><b>8</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_9"><b>9</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(250, 133, 0);"id='_multiplication'><b>X</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_4"><b>4</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_5"><b>5</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_6"><b>6</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(250, 133, 0);" id="_reduce"><b>-</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_1"><b>1</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_2"><b>2</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_3"><b>3</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(250, 133, 0);" id="_add"><b>+</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65); width: 240px; border-radius: 50px;" id="_0"><b>0</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(65, 65, 65);" id="_dot"><b>.</b></button>
+                        <button class="b1_2_small_circle" style="background-color: rgb(250, 133, 0);" id="_return"><b>=</b></button>
+                    </div>
+                    <div class="b1_background" id="b1_background"></div>
+                </div>
+                <!-- 時鐘 -->
+                <div class="black" id="b2">
+                    <div class="b2_1">
+                        <div class="b2_number">
+                            <span style="--i:1;"><b>1</b></span>
+                            <span style="--i:2;"><b>2</b></span>
+                            <span style="--i:3;"><b>3</b></span>
+                            <span style="--i:4;"><b>4</b></span>
+                            <span style="--i:5;"><b>5</b></span>
+                            <span style="--i:6;"><b>6</b></span>
+                            <span style="--i:7;"><b>7</b></span>
+                            <span style="--i:8;"><b>8</b></span>
+                            <span style="--i:9;"><b>9</b></span>
+                            <span style="--i:10;"><b>10</b></span>
+                            <span style="--i:11;"><b>11</b></span>
+                            <span style="--i:12;"><b>12</b></span>
+                
+                            <div class="b2_time b2_time_hour">
+                                <i style="background-color: rgb(0, 0, 0);" id="b2_hr"></i>
+                            </div>
+                            <div class="b2_time b2_time_min">
+                                <i style="background-color: rgb(0, 0, 0);" id="b2_min"></i>
+                            </div>
+                            <div class="b2_time b2_time_sec">
+                                <i style="background-color: rgb(255, 0, 0);" id="b2_sec"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b2_background" id="b2_background"></div>
+                </div>
+                <!-- YOUTUBE -->
+                <div class="black" id="b3">
+                    <div class="b3_1">
+                        <div class="b3_1_left"></div>
+                        <div class="b3_1_right">
+                            <div class="b3_1_right_box"><i class='bx bx-laptop' style="color: white; font-size: 30px;"></i></div>
+                            <div class="b3_1_right_box"><i class='bx bx-bell' style="color: white; font-size: 30px;"></i></div>
+                            <div class="b3_1_right_box"><i class='bx bx-search' style="color: white; font-size: 30px;"></i></div>
+                        </div>
+                    </div>
+                    <div class="b3_2">
+                        <div class="b3_2_box" style="width: 90px;"><i class='bx bx-compass' style="font-size: 25px;"></i></div>
+                        <div class="b3_2_box" style="background-color: rgb(212, 212, 212); color: black;"><b>全部</b></div>
+                        <div class="b3_2_box"><b>遊戲</b></div>
+                        <div class="b3_2_box"><b>音樂</b></div>
+                        <div class="b3_2_box"><b>直播</b></div>
+                        <div class="b3_2_box"><b>動畫</b></div>
+                    </div>
+                    <div class="b3_3">
+                        <div class="b3_movie">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KMEiMOJIiCg?si=WXZCSM-6IpEvWCsi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="b3_writer">
+                            <div class="b3_circle"></div>
+                            <div class="b3_square">
+                                <b id="b3_p1">2024抖音熱歌🔥 3月第一周抖音上著名的悲伤歌曲🎧 張妙格 - 我期待的不是雪, 總會有人 , 這是你期盼的長大嗎,一直很安靜, 承桓 - 我會等, 任夏 - 我要他
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b3_4">
+                        <div class="b3_movie">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/1wjB_pvjxSg?si=-s_MPB_0-a7Nv26Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="b3_writer">
+                            <div class="b3_circle"></div>
+                            <div class="b3_square">
+                                <b id="b3_p2">三月熱門歌曲最火🔥2024流行歌曲【抖音破億神曲】Tiktok 抖音感動洗腦精選神曲必聽 : 承桓 - 總是會有人 , 也可 - 不如, 小阿七 - 從前說 , 盧盧快閉嘴 - 字字句句..</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b3_5">
+                        <div class="b3_5_box"><i class='bx bxs-home' style='color:#ffffff' ></i></div>
+                        <div class="b3_5_box"><i class='bx bx-movie-play' style='color:#ffffff' ></i></div>
+                        <div class="b3_5_box"><i class='bx bx-add-to-queue' style='color:#ffffff'></i></div>
+                        <div class="b3_5_box"><i class='bx bxs-videos' style='color:#ffffff' ></i></div>
+                        <div class="b3_5_box"><i class='bx bxs-user-circle' style='color:#ffffff'></i></div>
+                    </div>
+                    <div class="b3_background" id="b3_background"></div>
+                </div>
+                <!-- sitting -->
+                <div class="black" id="b4">
+                    <div class="b4_sitting">
+                        <div class="b4_p"><b>設定</b></div>
+                        <input type="text" class="b4_search">
+                            <!-- <div class="b4_search_right">
+                                <i class='bx bx-search' style="color: white; font-size: 30px; margin:5px 0px 0px 5px;"><b>搜尋</b></i>
+                            </div>
+                            <div class="b4_search_left"></div> -->
+                        </input>
+                        <div class="b4_user">
+                            <div class="b4_top">
+                                <i class='bx bxs-user-circle' style='color:#ffffff; font-size: 90px;' ></i>
+                                <div class="b4_top_text">
+                                    <b style="font-size: 30px">廖育展</b><br>
+                                    <p>Apple ID、iCloud、媒體與購買項目</p>
+                                </div>
+                            </div>
+                            <div class="b4_botton">
+                                <b>iPhone尚未進行備份</b>
+                            </div>
+                        </div>
+                        <div class="b4_big_box1">
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_1"></div><b>飛航模式</b></div><div class="b4_sbox_right">
+                                <div id="b4_sbox_toggle">
+                                    <div class="b4_sbox_toggle_circle1" id="b4_sbox_toggle_circle1"></div>
+                                    <div class="b4_sbox_toggle_circle2" id="b4_sbox_toggle_circle2"></div>
+                                </div>
+                            </div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_2"></div><b>Wi-Fi</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_3"></div><b>藍芽</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_4"></div><b>行動服務</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_5"></div><b>個人熱點</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                        </div>
+                        <div class="b4_big_box2">
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_6"></div><b>通知</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_7"></div><b>聲音與觸覺回饋</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_8"></div><b>專注模式</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_9"></div><b>螢幕使用時間</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                        </div>
+                        <div class="b4_big_box3">
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_10"></div><b>一般</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_11"></div><b>控制中心</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_12"></div><b>螢幕顯示與亮度</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_13"></div><b>主畫面與App資料庫</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_14"></div><b>輔助使用</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_15"></div><b>背景圖片</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_16"></div><b>待機模式</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_17"></div><b>Siri與搜尋</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_18"></div><b>Face ID與密碼</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_19"></div><b>SOS緊急服務</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_20"></div><b>暴露通知</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                            <div class="b4_sbox"><div class="b4_sbox_left"><div id="b4_img_21"></div><b>電池</b></div><div class="b4_sbox_right"><div id="img"></div></div></div>
+                        </div>
+                    </div>
+                    <div class="b4_background" id="b4_background"></div>
+                </div>
+
+                <div class="black_line">
+                    <div class="black_line_text"><b>計算機</b></div>
+                    <div class="black_line_text"><b>時鐘</b></div>
+                    <div class="black_line_text"><b>YOUTUBE</b></div>
+                    <div class="black_line_text"><b>設定</b></div>
+                </div>
+                <!-- 聯絡人 -->
+                <div class="black" id="b5">
+                    <div class="b5_top">
+                        <div class="b5_top_box" id="b5_top_box1">
+                            <div class="b5_top_box1_top">
+                                <i class='bx bx-plus' style='color:#0072b4; font-size: 40px; margin-left: 10px;' ></i>
+                                <b style="color: white; font-size: 20px; margin-left: 188px;">常用聯絡人</b>
+                            </div>
+                            <div class="b5_top_box1_botton"><b style="font-size: 40px; color: rgb(124, 124, 124);">沒有常用聯絡人</b></div>
+                        </div>
+                        <div class="b5_top_box" id="b5_top_box2">
+                            <div class="b5_top_box2_top">
+                                <div class="b5_box2_top1" id="b5_box2_top1"><b style="font-size: 40px; color: #0072b4; font-size: 20px;">清除</b></div>
+                                <div class="b5_box2_top2"><div class="b5_box2_top2_1"><b style="color: #ffffff;">所有電話</b></div><div class="b5_box2_top2_2"><b style="color: #ffffff;">未接來電</b></div></div>
+                                <div class="b5_box2_top3" id="b5_box2_top3"><b style="color: #0072b4; font-size: 20px;">編輯</b></div>
+                            </div>
+                            <div class="b5_top_box2_botton">
+                                <div class="b5_top_box2_botton_box" style="border-top: 0px;">
+                                    <div class="b5_box2_1"></div>
+                                    <div class="b5_box2_2"><b style="font-size: 40px;">通話紀錄</b></div>
+                                    <div class="b5_box2_3"></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>03-4162858</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>爸爸</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b style="color: #ff0000;">未知電話號碼</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>0984-250-133</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>02-29528299</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>未知電話號碼</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>0972-443-942</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b style="color: #ff0000;">未知電話號碼</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>媽媽</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>0988-567-815</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                                <div class="b5_top_box2_botton_box">
+                                    <div class="b5_box2_1"><i class='bx bxs-no-entry' style='color:#ff0000; font-size: 30px;' ></i></div>
+                                    <div class="b5_box2_2"><b>0988-567-815</b><b style="font-size: 20px; color: #424242;">下午2:34</b></div>
+                                    <div class="b5_box2_3"><i class='bx bx-error-circle' style="color: #0072b4; font-size: 30px;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b5_top_box" id="b5_top_box3">
+                            
+                            <div class="b5_top_box1_botton"><b style="font-size: 40px; color: rgb(124, 124, 124);">尚未開發</b></div>
+                        </div>
+                        <div class="b5_top_box" id="b5_top_box4">
+                            <div class="b5_top_box_box4_none" id="b5_top_box_box4_none"></div>
+                            <div class="b5_top_box_box4_title" id="b5_top_box_box4_title"><b></b></div>
+                            <div class="b5_top_box_box4">
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_1" onclick="phone(1);">1</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_2" onclick="phone(2);">2</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_3" onclick="phone(3);">3</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_4" onclick="phone(4);">4</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_5" onclick="phone(5);">5</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_6" onclick="phone(6);">6</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_7" onclick="phone(7);">7</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_8" onclick="phone(8);">8</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_9" onclick="phone(9);">9</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_*" onclick="phone('*');">*</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_0" onclick="phone(0);">0</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_#" onclick="phone('#');">#</button>
+                                <button class="b5_top_box_box4_circle" id="b5_top_box_box4_circle_" onclick="phone(11);" style="background-color: green;"><i class='bx bxs-phone' style='color:#ffffff' ></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b5_botton">
+                        <div class="b5_botton_box" id="b5_botton_box1">
+                            <i class='bx bxs-star b5_bb' style='color:#0072b4; font-size: 45px; margin-top: 10px;' ></i>
+                            <b class="b5_bb2" style="font-size:20px; color: #0072b4;">常用聯絡人</b>
+                        </div>
+                        <div class="b5_botton_box" id="b5_botton_box2">
+                            <i class='bx bxs-time b5_bb' style='color:rgb(124, 124, 124); font-size: 45px; margin-top: 10px;' ></i>
+                            <b class="b5_bb2" style="font-size:20px; color: rgb(124, 124, 124);">通話紀錄</b>
+                        </div>
+                        <div class="b5_botton_box" id="b5_botton_box3">
+                            <i class='bx bxs-user-circle b5_bb' style='color:rgb(124, 124, 124); font-size: 45px; margin-top: 10px;' ></i>
+                            <b class="b5_bb2" style="font-size:20px; color: rgb(124, 124, 124);">聯絡人</b>
+                        </div>
+                        <div class="b5_botton_box" id="b5_botton_box4">
+                            <i class='bx bxs-grid b5_bb' style='color:rgb(124, 124, 124); font-size: 45px; margin-top: 10px;' ></i>
+                            <b class="b5_bb2" style="font-size:20px; color: rgb(124, 124, 124);">數字鍵盤</b>
+                        </div>
+                        <div class="b5_botton_box" id="b5_botton_box5">
+                            <i class='bx bx-glasses-alt b5_bb' style='color:rgb(124, 124, 124); font-size: 45px; margin-top: 10px;'></i>
+                            <b class="b5_bb2" style="font-size:20px; color: rgb(124, 124, 124);">語音信箱</b>
+                        </div>
+                    </div>
+                    <div class="b5_background" id="b5_background"></div>
+                </div>
+                <!-- instagram -->
+                <div class="black" id="b6">
+                    <div class="b6_title">
+                        <div class="b6_title_img"></div>
+                        <i class='bx bx-heart' style="margin-left: 330px; margin-right: 10px;"></i>
+                        <i class='bx bxl-messenger'></i>
+                    </div>
+                    <div class="b6_circle_box" id="b6_circle_box">
+                        <div class="b6_circle_scroll" id="b6_circle_scroll">
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/1.png');"></div><b>yuchan</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/2.png');"></div><b>rebecca</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/3.png');"></div><b>leo_08</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/4.png');"></div><b>xox_0220</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/5.png');"></div><b>opoxz48</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/6.png');"></div><b>anddy0617</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/7.png');"></div><b>zinde_588</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/8.png');"></div><b>marrowi00</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/9.png');"></div><b>oooooooi</b></div>
+                            <div class="b6_circle"><div class="b6_circle_img" style="background-image: url('b6_icon/10.png');"></div><b>__por_5</b></div>
+                        </div>
+                    </div>
+                    <div class="b6_middle">
+                        <div class="b6_middle_user">
+                            <div class="b6_middle_user_circle" style="background-image: url('b6_icon/8.png');"></div>
+                            <b style="margin-right: -50px;">marrowi00</b>
+                            <b style="font-size: 40px; margin-left: 440px; margin-bottom: 20px;">...</b>
+                        </div>
+                        <div class="b6_middle_img" id="b6_middle_img">
+                            <div class="b6_middle_img_scroll" id="b6_middle_img_scroll">
+                                <div class="b6_middle_img1"></div>
+                                <div class="b6_middle_img2"></div>
+                                <div class="b6_middle_img3"></div>
+                                <div class="b6_middle_img4"></div>
+                            </div>
+                        </div>
+                        <div class="b6_middle_textbox">
+                            <div class="b6_middle_textbox_icon">
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-message-rounded bx-flip-horizontal' style='color:#ffffff' ></i>
+                                <i class='bx bxl-telegram' style="margin-right: 100px;"></i>
+
+                                <div class="b6_middle_textbox_number">
+                                    <div class="b6_middle_textbox_circle" id="b6_middle_textbox_circle1" style="background-color: #0072b4;"></div>
+                                    <div class="b6_middle_textbox_circle" id="b6_middle_textbox_circle2"></div>
+                                    <div class="b6_middle_textbox_circle" id="b6_middle_textbox_circle3"></div>
+                                    <div class="b6_middle_textbox_circle" id="b6_middle_textbox_circle4"></div>
+                                </div>
+
+                                <i class='bx bx-bookmark' style='color:#ffffff' ></i>
+                            </div>
+                            <div class="b6_middle_textbox_text" style="background-color: #000000;">
+                                <b>53.789個讚</b>
+                                <br>
+                                <b>沒什麼東西</b>
+                                <br>
+                                <b style="color: #424242;">3月8日 <b style="color: white;">翻譯年糕</b></b>
+                            </div>
+                        </div>
+                        <div class="b6_middle_user">
+                            <div class="b6_middle_user_circle" style="background-image: url('b6_icon/10.png');"></div>
+                            <b style="margin-right: -30px;">__por_5</b>
+                            <b style="font-size: 40px; margin-left: 440px; margin-bottom: 20px;">...</b>
+                        </div>
+                        <div class="b6_middle_img">
+                            <div class="b6_middle_img5"></div>
+                        </div>
+                        <div class="b6_middle_text"></div>
+                    </div>
+                    <div class="b6_botton" id="b6_botton" style="display: none;">
+                        <div class="b6_botton_box"><i class='bx bxs-home'></i></div>
+                        <div class="b6_botton_box"><i class='bx bx-search-alt-2' style='color:#ffffff' ></i></div>
+                        <div class="b6_botton_box"><i class='bx bx-message-square-add' style='color:#ffffff' ></i></div>
+                        <div class="b6_botton_box"><i class='bx bxs-videos' style='color:#ffffff' ></i></div>
+                        <div class="b6_botton_box"><i class='bx bxs-user-circle'></i></div>
+                    </div>
+                    <div class="b6_background" id="b6_background"></div>
+                </div>
+                <!-- Line -->
+                <div class="black" id="b7">
+                    <div class="b7_lock" id="b7_lock">
+                        <div class="b7_lock_text">
+                            <b>輸入密碼</b>
+                            <p id="b7_lock_text">請輸入密碼。</p>
+                        </div>
+                        <div class="b7_lock_number">
+                            <div class="b7_lock_number_circle" id="b7_lock_number_circle1"></div>
+                            <div class="b7_lock_number_circle" id="b7_lock_number_circle2"></div>
+                            <div class="b7_lock_number_circle" id="b7_lock_number_circle3"></div>
+                            <div class="b7_lock_number_circle" id="b7_lock_number_circle4"></div>
+                        </div>
+                        <div class="b7_lock_numberTable">
+                            <div class="b7_lock_number_box" id="b7_lock_number_box1"><b>1</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box2"><b>2</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box3"><b>3</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box4"><b>4</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box5"><b>5</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box6"><b>6</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box7"><b>7</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box8"><b>8</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box9"><b>9</b></div>
+                            <div class="b7_lock_number_box"></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box0"><b>0</b></div>
+                            <div class="b7_lock_number_box" id="b7_lock_number_box"><b>-</b></div>
+                        </div>
+                    </div>
+                    <div class="b7_messeage">
+                        <div class="b7_messeage_title">
+                            <i class='bx bx-chevron-left'></i>
+                            <b style="font-size: 25px; margin-left: -10px; margin-right: 230px;">未知陌生人</b>
+                            <i class='bx bx-search' style='color:#ffffff; font-size: 30px; margin: 10px;'></i>
+                            <i class='bx bx-phone' style='color:#ffffff; font-size: 30px; margin: 10px;'></i>
+                            <i class='bx bx-menu' style="margin: 10px;"></i>
+                        </div>
+                        <div class="b7_messeage_textbox">
+                            <div class="b7_messeage_text"><b>請問你是誰?</b></div>
+                        </div>
+                        <div class="b7_messeage_scanf">
+                            <i class='bx bx-plus-circle'></i>
+                            <i class='bx bx-camera' style='color:#ffffff' ></i>
+                            <i class='bx bx-image'></i>
+
+                            <input type="text" placeholder=" Aa" id="b7_scanf">
+
+                            <i class='bx bx-send' style='color:#ffffff; cursor: pointer;' id="b7_send"></i>
+                        </div>
+                    </div>
+                    <div class="b7_background" id="b7_background"></div>
+                </div>
+                <!-- 日歷 -->
+                <div class="black" id="b8">
+                    <div class="b8_date">
+                        <b id="b8_dateB"></b>
+                    </div>
+                    <div class="b8_month">
+                        <b id="b8_monthB"></b>
+                    </div>
+                </div>
+
+                <div class="black_line">
+                    <div class="black_line_text"><b>聯絡人</b></div>
+                    <div class="black_line_text"><b>instagram</b></div>
+                    <div class="black_line_text"><b>Line</b></div>
+                    <div class="black_line_text"><b>日歷</b></div>
+                </div>
+                <!-- 開關鍵 -->
+                <div class="start" id="start"></div>
+            </div>
+            <!-- 畫面底部 -->
+            <div class="down">
+                <div class="small_square">
+                    <div class="o"></div>
+                    <div class="o"></div>
+                    <div class="o"></div>
+                    <div class="o"></div>
+                </div>
+                <div class="big_square">
+                    <div class="black" id="b13" style="overflow: hidden; margin-bottom: 10px;">
+                        <img id="b13_img" src="APP_icon/b13.png">
+                    </div>
+                    <div class="black" id="b14" style="overflow: hidden; margin-bottom: 10px;">
+                        <img id="b14_img" src="APP_icon/b14.png">
+                    </div>
+                    <div class="black" id="b15" style="overflow: hidden; margin-bottom: 10px;">
+                        <img id="b15_img" src="APP_icon/b15.png">
+                    </div>
+                    <div class="black" id="b16" style="overflow: hidden; margin-bottom: 10px;">
+                        <img id="b16_img" src="APP_icon/b16.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <!-- 返回鍵 -->
+            <div class="circle" id="circle"></div>
+        </footer>
+    </div>
+    <!-- 解鎖畫面 -->
+    <div class="hidden" id="hidden"></div>
+    <div class="start_hidden" id="start_hidden"></div>
+    <script src="MY_Phone.js"></script>
+</body>
+</html>
